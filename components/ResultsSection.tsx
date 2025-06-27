@@ -55,9 +55,6 @@ function ResultCard({ title, beforeValue, afterValue, metric, chartType, index }
     }
   }, [isInView, beforeValue, afterValue])
 
-  const Chart = chartType === 'line' ? LineChart : AreaChart
-  const DataComponent = chartType === 'line' ? Line : Area
-
   return (
     <motion.div
       ref={ref}
@@ -83,26 +80,47 @@ function ResultCard({ title, beforeValue, afterValue, metric, chartType, index }
 
       <div className="h-40 mt-4">
         <ResponsiveContainer width="100%" height="100%">
-          <Chart data={animatedData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-            <XAxis dataKey="day" stroke="#666" />
-            <YAxis stroke="#666" />
-            <Tooltip 
-              contentStyle={{ 
-                backgroundColor: '#1A1A1A', 
-                border: '1px solid #D4AF37',
-                borderRadius: '8px'
-              }}
-            />
-            <DataComponent
-              type="monotone"
-              dataKey="value"
-              stroke="#D4AF37"
-              fill="#D4AF37"
-              fillOpacity={0.3}
-              strokeWidth={2}
-            />
-          </Chart>
+          {chartType === 'line' ? (
+            <LineChart data={animatedData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+              <XAxis dataKey="day" stroke="#666" />
+              <YAxis stroke="#666" />
+              <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: '#1A1A1A', 
+                  border: '1px solid #D4AF37',
+                  borderRadius: '8px'
+                }}
+              />
+              <Line
+                type="monotone"
+                dataKey="value"
+                stroke="#D4AF37"
+                strokeWidth={2}
+              />
+            </LineChart>
+          ) : (
+            <AreaChart data={animatedData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+              <XAxis dataKey="day" stroke="#666" />
+              <YAxis stroke="#666" />
+              <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: '#1A1A1A', 
+                  border: '1px solid #D4AF37',
+                  borderRadius: '8px'
+                }}
+              />
+              <Area
+                type="monotone"
+                dataKey="value"
+                stroke="#D4AF37"
+                fill="#D4AF37"
+                fillOpacity={0.3}
+                strokeWidth={2}
+              />
+            </AreaChart>
+          )}
         </ResponsiveContainer>
       </div>
 
