@@ -27,24 +27,24 @@ export default function ParticleBackground() {
       speedY: number
       opacity: number
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+      constructor(canvasWidth: number, canvasHeight: number) {
+        this.x = Math.random() * canvasWidth
+        this.y = Math.random() * canvasHeight
         this.size = Math.random() * 2 + 1
         this.speedX = Math.random() * 0.5 - 0.25
         this.speedY = Math.random() * 0.5 - 0.25
         this.opacity = Math.random() * 0.5 + 0.5
       }
 
-      update() {
+      update(canvasWidth: number, canvasHeight: number) {
         this.x += this.speedX
         this.y += this.speedY
 
-        if (this.x > canvas.width) this.x = 0
-        else if (this.x < 0) this.x = canvas.width
+        if (this.x > canvasWidth) this.x = 0
+        else if (this.x < 0) this.x = canvasWidth
 
-        if (this.y > canvas.height) this.y = 0
-        else if (this.y < 0) this.y = canvas.height
+        if (this.y > canvasHeight) this.y = 0
+        else if (this.y < 0) this.y = canvasHeight
       }
 
       draw() {
@@ -58,15 +58,15 @@ export default function ParticleBackground() {
     }
 
     for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle())
+      particles.push(new Particle(canvas.width, canvas.height))
     }
 
     function animate() {
-      if (!ctx) return
+      if (!ctx || !canvas) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update()
+        particles[i].update(canvas.width, canvas.height)
         particles[i].draw()
       }
       
@@ -76,6 +76,7 @@ export default function ParticleBackground() {
     animate()
 
     const handleResize = () => {
+      if (!canvas) return
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
     }
