@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Navigation from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Noir Producers - 夜職特化SNSプロデュース',
@@ -25,7 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className="scroll-smooth">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased pt-16">
+        <Navigation />
+        {children}
+      </body>
     </html>
   )
 }

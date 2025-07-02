@@ -10,7 +10,7 @@ export default function CTASection() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section ref={ref} className="relative py-32 px-4 overflow-hidden">
+    <section id="contact" ref={ref} className="relative py-32 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-noir-primary via-noir-dark to-noir-primary opacity-90" />
       <ParticleBackground />
       

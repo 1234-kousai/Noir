@@ -28,7 +28,7 @@ export default function StrengthsSection() {
   ]
 
   return (
-    <section ref={ref} className="py-20 px-4 bg-noir-primary">
+    <section id="strengths" ref={ref} className="py-20 px-4 bg-noir-primary">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

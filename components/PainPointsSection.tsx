@@ -78,7 +78,7 @@ export default function PainPointsSection() {
   ]
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-noir-primary to-noir-dark">
+    <section id="pain-points" className="py-20 px-4 bg-gradient-to-b from-noir-primary to-noir-dark">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
