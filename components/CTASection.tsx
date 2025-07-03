@@ -50,13 +50,16 @@ export default function CTASection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <motion.button
+          <motion.a
+            href="https://line.me/R/ti/p/@906vafeo"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="px-12 py-6 bg-noir-gold text-noir-primary font-bold text-xl rounded-full hover:shadow-2xl hover:shadow-noir-gold/50 transition-all duration-300 animate-pulse-glow"
+            className="inline-block px-12 py-6 bg-noir-gold text-noir-primary font-bold text-xl rounded-full hover:shadow-2xl hover:shadow-noir-gold/50 transition-all duration-300 animate-pulse-glow"
           >
             今すぐ、無料でNo.1戦略を聞く
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         <motion.div
