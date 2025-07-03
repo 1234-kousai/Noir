@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { useRef } from 'react'
 
 interface PainPointCardProps {
   number: string
@@ -13,29 +13,6 @@ interface PainPointCardProps {
 function PainPointCard({ number, text, index }: PainPointCardProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [displayNumber, setDisplayNumber] = useState(0)
-  
-  useEffect(() => {
-    if (isInView) {
-      const targetNumber = parseInt(number)
-      const duration = 1500
-      const steps = 30
-      const increment = targetNumber / steps
-      let current = 0
-      
-      const timer = setInterval(() => {
-        current += increment
-        if (current >= targetNumber) {
-          setDisplayNumber(targetNumber)
-          clearInterval(timer)
-        } else {
-          setDisplayNumber(Math.floor(current))
-        }
-      }, duration / steps)
-      
-      return () => clearInterval(timer)
-    }
-  }, [isInView, number])
 
   return (
     <motion.div
@@ -49,11 +26,14 @@ function PainPointCard({ number, text, index }: PainPointCardProps) {
       }}
       className="bg-gradient-to-br from-noir-dark to-black p-8 rounded-2xl border border-noir-crimson/20 transition-all duration-300"
     >
-      <div className="text-6xl font-bold text-noir-crimson mb-4">
-        {displayNumber !== 0 && displayNumber}
-        {displayNumber !== 0 && number.includes('万') && '万'}
-        {displayNumber !== 0 && number.includes('分') && '分'}
-      </div>
+      <motion.div 
+        className="text-6xl font-bold text-noir-crimson mb-4"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+        transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+      >
+        {number}
+      </motion.div>
       <p className="text-lg md:text-xl text-noir-light/90 leading-relaxed">
         {text}
       </p>
@@ -64,15 +44,15 @@ function PainPointCard({ number, text, index }: PainPointCardProps) {
 export default function PainPointsSection() {
   const painPoints = [
     {
-      number: '3分1',
+      number: '1/3',
       text: '毎日3投稿しても、"いいね"はライバルの3分の1。',
     },
     {
-      number: '1万',
+      number: '指名0',
       text: 'フォロワーは1万人を超えたのに、指名は全く増えない。',
     },
     {
-      number: '20万',
+      number: '成果0',
       text: '"自己投資20万円"でも成果ゼロ。何が正解か分からない。',
     },
   ]
