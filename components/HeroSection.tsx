@@ -60,9 +60,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl lg:text-2xl font-sans mb-12"
         >
-          AI × 夜職特化チームが、あなたを
-          <span className="text-gradient font-bold">"稼げるNo.1"</span>
-          へプロデュースする。
+          夜職に完全特化したプロチームが、あなたを
+          <span className="text-gradient font-bold">"選ばれ続ける存在"</span>
+          へとプロデュースする。
         </motion.p>
 
         <motion.div
@@ -76,7 +76,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-noir-gold text-noir-primary font-bold text-lg rounded-full hover:shadow-lg hover:shadow-noir-gold/50 transition-all duration-300 animate-pulse-glow"
           >
-            無料でNo.1戦略を聞く
+            無料でパーソナル戦略を聞く
           </motion.button>
           
           <motion.a

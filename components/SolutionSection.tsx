@@ -12,9 +12,9 @@ export default function SolutionSection() {
   const steps = [
     {
       step: 'STEP 1',
-      title: 'No.1キャスト診断 ＆ 戦略ロードマップ',
-      subtitle: '3ヶ月で指名+30%を目指す、最初の"設計図"',
-      description: 'まずは、あなたの現状とポテンシャルを、AIとプロの目で徹底的に分析・診断。トップへ駆け上がるための、具体的な戦略とコンテンツプランを提示します。',
+      title: 'パーソナル・グロース診断 ＆ 戦略ロードマップ',
+      subtitle: '3ヶ月で"選ばれる理由"を確立する、最初の"設計図"',
+      description: 'まずは、あなたの現状とポテンシャルを、我々のテクノロジーとプロの目で徹底的に分析・診断。競合を突き放すための、具体的な戦略とコンテンツプランを提示します。',
       cta: '→ まずは"診断"から始める',
       ctaType: 'primary',
     },
@@ -106,7 +106,7 @@ export default function SolutionSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-8 text-sm text-noir-light/60"
         >
-          ※平均実績値（30日・8名）
+          <small>※平均実績値（30日・8名）</small>
         </motion.p>
       </div>
     </section>

@@ -58,7 +58,7 @@ export default function CTASection() {
             whileTap={{ scale: 0.95 }}
             className="inline-block px-12 py-6 bg-noir-gold text-noir-primary font-bold text-xl rounded-full hover:shadow-2xl hover:shadow-noir-gold/50 transition-all duration-300 animate-pulse-glow"
           >
-            今すぐ、無料でNo.1戦略を聞く
+            今すぐ、無料でパーソナル戦略を聞く
           </motion.a>
         </motion.div>
 

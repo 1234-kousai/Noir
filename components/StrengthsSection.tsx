@@ -12,8 +12,8 @@ export default function StrengthsSection() {
   const strengths = [
     {
       icon: Brain,
-      title: 'AI × 圧倒的な「業界特化」',
-      description: '我々はこの世界で勝つことだけを考え抜いています。一般的なマーケティング論では通用しない、この業界特有の「勝ちパターン」をAIで分析し、実行します。',
+      title: 'テクノロジー × 圧倒的な「業界特化」',
+      description: '我々はこの世界で勝つことだけを考え抜いています。一般的なマーケティング論では通用しない、この業界特有の「勝ちパターン」を分析。独自開発したプロダクトも活用します。',
     },
     {
       icon: Users,
