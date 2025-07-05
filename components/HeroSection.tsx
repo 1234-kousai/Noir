@@ -69,23 +69,17 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex justify-center"
         >
-          <motion.button
+          <motion.a
+            href="https://line.me/R/ti/p/@906vafeo"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-noir-gold text-noir-primary font-bold text-lg rounded-full hover:shadow-lg hover:shadow-noir-gold/50 transition-all duration-300 animate-pulse-glow"
+            className="inline-block px-8 py-4 bg-noir-gold text-noir-primary font-bold text-lg rounded-full hover:shadow-lg hover:shadow-noir-gold/50 transition-all duration-300 animate-pulse-glow"
           >
             無料でパーソナル戦略を聞く
-          </motion.button>
-          
-          <motion.a
-            href="#results"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-noir-gold text-noir-gold font-bold text-lg rounded-full hover:bg-noir-gold hover:text-noir-primary transition-all duration-300"
-          >
-            まず実績を見る →
           </motion.a>
         </motion.div>
       </div>

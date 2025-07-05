@@ -69,16 +69,19 @@ export default function Navigation() {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-noir-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               </motion.a>
             ))}
-            <motion.button
+            <motion.a
+              href="https://line.me/R/ti/p/@906vafeo"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="ml-4 px-6 py-2 bg-noir-gold text-noir-primary font-bold text-sm rounded-full hover:shadow-lg hover:shadow-noir-gold/50 transition-all duration-300 uppercase tracking-wider"
+              className="ml-4 px-6 py-2 bg-noir-gold text-noir-primary font-bold text-sm rounded-full hover:shadow-lg hover:shadow-noir-gold/50 transition-all duration-300 uppercase tracking-wider inline-block"
             >
               無料相談
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
