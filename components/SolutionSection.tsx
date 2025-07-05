@@ -9,22 +9,33 @@ export default function SolutionSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  const steps = [
+  const plans = [
     {
-      step: 'STEP 1',
-      title: 'パーソナル・グロース診断 ＆ 戦略ロードマップ',
-      subtitle: '3ヶ月で"選ばれる理由"を確立する、最初の"設計図"',
-      description: 'まずは、あなたの現状とポテンシャルを、我々のテクノロジーとプロの目で徹底的に分析・診断。競合を突き放すための、具体的な戦略とコンテンツプランを提示します。',
-      cta: '→ まずは"診断"から始める',
+      title: 'EXECUTIVE PRODUCE',
+      subtitle: '(エグゼクティブ・プロデュース)',
+      target: '多忙なトップ層向け。「丸投げ」で、あなたは結果だけを享受する。',
+      description: '戦略設計からコンテンツ制作、投稿代行まで、SNSの全てをお引き受けします。',
+      price: '月額 300,000円〜',
+      cta: '→ 詳細を見る',
       ctaType: 'primary',
     },
     {
-      step: 'STEP 2',
-      title: '月額グロース・パートナーシップ',
-      subtitle: '"実行"の全てを、我々が引き受ける',
-      description: '診断で描いた戦略を、我々があなたに代わって実行します。日々の投稿コンテンツの企画・制作から、ファンとのコミュニケーション、データ分析と改善まで。あなたは、ただ増えていく指名と売上を待つだけです。',
-      cta: '→ サービス資料（PDF）をダウンロード',
-      ctaType: 'secondary',
+      title: 'GROWTH PARTNERSHIP',
+      subtitle: '(グロース・パートナーシップ)',
+      target: '伸び悩む努力家向け。プロの「軍師」と二人三脚で、確実な成長を。',
+      description: 'あなたの日々の発信を、単なる「投稿」から「戦略的アクション」へと昇華させます。定例での戦略会議と日々の伴走支援で、あなたの成長を加速させます。',
+      price: '月額 100,000円〜',
+      cta: '→ 詳細を見る',
+      ctaType: 'primary',
+    },
+    {
+      title: 'STRATEGIC DIAGNOSIS',
+      subtitle: '(ストラテジック・ダイアグノシス)',
+      target: 'まず方向性を知りたい方向け。進むべき「地図」を、まずその手に。',
+      description: '独自の分析メソッドであなたの現在地とポテンシャルを可視化。あなた専用のパーソナル・グロース戦略を策定し、具体的なアクションプランとして納品します。',
+      price: '1回 80,000円',
+      cta: '→ 詳細を見る',
+      ctaType: 'primary',
     },
   ]
 
@@ -38,76 +49,55 @@ export default function SolutionSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-            その悩み、我々が
-            <br />
-            <span className="text-gradient">「稼ぐ資産」</span>へと変える。
+            <span className="text-gradient">PRODUCE MENU</span>
           </h2>
           <p className="text-lg md:text-xl text-noir-light/80 max-w-3xl mx-auto">
-            我々は、あなたのSNSアカウントを「稼げる戦略的資産」へと変貌させる、
-            <br />
-            2段階のコアソリューションを提供します。
+            あなたの現在地と目指すゴールに合わせ、最適なプロデュースプランをご提案します。
           </p>
         </motion.div>
 
-        <div className="space-y-12">
-          {steps.map((step, index) => (
+        <div className="grid lg:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.6, delay: index * 0.3 }}
-              className="relative"
+              className="relative h-full"
             >
-              <div className="flex items-start gap-8">
-                <div className="hidden md:block">
-                  <div className="w-20 h-20 rounded-full bg-noir-gold/20 flex items-center justify-center">
-                    <span className="text-noir-gold font-bold text-xl">{index + 1}</span>
-                  </div>
-                  {index < steps.length - 1 && (
-                    <div className="w-1 h-32 bg-noir-gold/20 mx-auto mt-4" />
-                  )}
-                </div>
-
-                <div className="flex-1 bg-gradient-to-r from-noir-dark to-transparent p-8 rounded-2xl border-l-4 border-noir-gold">
-                  <div className="mb-2 text-noir-gold font-display font-bold text-lg">
-                    {step.step}
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-2">
-                    {step.title}
+              <div className="h-full bg-gradient-to-br from-noir-dark to-black p-8 rounded-2xl border border-noir-gold/20 hover:border-noir-gold/50 transition-all duration-300">
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-2 text-noir-gold">
+                    {plan.title}
                   </h3>
-                  <p className="text-lg text-noir-gold/80 mb-4">
-                    {step.subtitle}
+                  <p className="text-lg text-noir-light/80 mb-4">
+                    {plan.subtitle}
+                  </p>
+                  <p className="text-noir-light/60 mb-4 italic">
+                    {plan.target}
                   </p>
                   <p className="text-noir-light/80 mb-6 leading-relaxed">
-                    {step.description}
+                    <span className="font-bold">内容：</span> {plan.description}
+                  </p>
+                  <p className="text-2xl font-bold text-noir-gold mb-6">
+                    <span className="text-sm text-noir-light/60">料金：</span> {plan.price}
                   </p>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all duration-300 ${
-                      step.ctaType === 'primary'
+                      plan.ctaType === 'primary'
                         ? 'bg-noir-gold text-noir-primary hover:shadow-lg hover:shadow-noir-gold/50'
                         : 'border-2 border-noir-gold text-noir-gold hover:bg-noir-gold hover:text-noir-primary'
                     }`}
                   >
-                    {step.ctaType === 'secondary' && <FileText className="w-5 h-5" />}
-                    {step.cta}
-                    {step.ctaType === 'primary' && <ArrowRight className="w-5 h-5" />}
+                    {plan.cta}
+                    <ArrowRight className="w-5 h-5" />
                   </motion.button>
-                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-8 text-sm text-noir-light/60"
-        >
-          <small>※平均実績値（30日・8名）</small>
-        </motion.p>
       </div>
     </section>
   )
