@@ -11,7 +11,7 @@ export default function SolutionSection() {
 
   const plans = [
     {
-      title: 'EXECUTIVE PRODUCE',
+      title: 'EXECUTIVE\nPRODUCE',
       subtitle: '(エグゼクティブ・プロデュース)',
       target: '多忙なトップ層向け。「丸投げ」で、あなたは結果だけを享受する。',
       description: '戦略設計からコンテンツ制作、投稿代行まで、SNSの全てをお引き受けします。',
@@ -20,7 +20,7 @@ export default function SolutionSection() {
       ctaType: 'primary',
     },
     {
-      title: 'GROWTH PARTNERSHIP',
+      title: 'GROWTH\nPARTNERSHIP',
       subtitle: '(グロース・パートナーシップ)',
       target: '伸び悩む努力家向け。プロの「軍師」と二人三脚で、確実な成長を。',
       description: 'あなたの日々の発信を、単なる「投稿」から「戦略的アクション」へと昇華させます。定例での戦略会議と日々の伴走支援で、あなたの成長を加速させます。',
@@ -29,7 +29,7 @@ export default function SolutionSection() {
       ctaType: 'primary',
     },
     {
-      title: 'STRATEGIC DIAGNOSIS',
+      title: 'STRATEGIC\nDIAGNOSIS',
       subtitle: '(ストラテジック・ダイアグノシス)',
       target: 'まず方向性を知りたい方向け。進むべき「地図」を、まずその手に。',
       description: '独自の分析メソッドであなたの現在地とポテンシャルを可視化。あなた専用のパーソナル・グロース戦略を策定し、具体的なアクションプランとして納品します。',
@@ -56,7 +56,7 @@ export default function SolutionSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -65,33 +65,39 @@ export default function SolutionSection() {
               transition={{ duration: 0.6, delay: index * 0.3 }}
               className="relative h-full"
             >
-              <div className="h-full bg-gradient-to-br from-noir-dark to-black p-8 rounded-2xl border border-noir-gold/20 hover:border-noir-gold/50 transition-all duration-300">
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-2 text-noir-gold">
+              <div className="h-full bg-gradient-to-br from-noir-dark to-black p-6 md:p-8 rounded-2xl border border-noir-gold/20 hover:border-noir-gold/50 transition-all duration-300">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-2 text-noir-gold whitespace-pre-line">
                     {plan.title}
                   </h3>
-                  <p className="text-lg text-noir-light/80 mb-4">
+                  <p className="text-base sm:text-lg text-noir-light/80 mb-4">
                     {plan.subtitle}
                   </p>
-                  <p className="text-noir-light/60 mb-4 italic">
+                  <p className="text-sm sm:text-base text-noir-light/60 mb-4 italic leading-relaxed">
                     {plan.target}
                   </p>
-                  <p className="text-noir-light/80 mb-6 leading-relaxed">
-                    <span className="font-bold">内容：</span> {plan.description}
-                  </p>
-                  <p className="text-2xl font-bold text-noir-gold mb-6">
-                    <span className="text-sm text-noir-light/60">料金：</span> {plan.price}
-                  </p>
+                  <div className="mb-6">
+                    <p className="text-sm font-bold text-noir-light/90 mb-2">内容：</p>
+                    <p className="text-sm sm:text-base text-noir-light/80 leading-relaxed">
+                      {plan.description}
+                    </p>
+                  </div>
+                  <div className="mb-6">
+                    <p className="text-sm text-noir-light/60 mb-1">料金</p>
+                    <p className="text-xl sm:text-2xl font-bold text-noir-gold">
+                      {plan.price}
+                    </p>
+                  </div>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all duration-300 ${
+                    className={`inline-flex items-center gap-2 px-4 sm:px-6 py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 ${
                       plan.ctaType === 'primary'
                         ? 'bg-noir-gold text-noir-primary hover:shadow-lg hover:shadow-noir-gold/50'
                         : 'border-2 border-noir-gold text-noir-gold hover:bg-noir-gold hover:text-noir-primary'
                     }`}
                   >
                     {plan.cta}
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </motion.button>
               </div>
             </motion.div>
